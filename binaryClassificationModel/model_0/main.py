@@ -8,6 +8,8 @@ import requests
 from pathlib import Path
 from helper_functions import *
 
+# 1 Making some data
+
 # Make 1000 samples
 n_samples = 1000
 
@@ -45,9 +47,9 @@ y = torch.from_numpy(y).type(torch.float32)
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, #this is the format for the function
-                                                     y,
-                                                     test_size=0.2,# 20 percent of data will be test and the rest will be train
-                                                     random_state=42)
+                                                    y,
+                                                    test_size=0.2,# 20 percent of data will be test and the rest will be train
+                                                    random_state=42)
 
 #Looking at the test and train datasets
 # print(f"Length of training set X: {len(X_train)}", f"\nlength of testing set X: {len(X_test)}", f"\nlength of training set y:{len(y_train)}", f"\nlength of testing set y: {len(y_test)}")
@@ -55,6 +57,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, #this is the format for t
 # Make device agnostic code
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(device)
+
+### 2.1 Making the model (for documentation purposes)
 
 # 1. Construct a model that Subclasses nn.Module
 class CircleModelV1(nn.Module):
@@ -89,7 +93,9 @@ with torch.inference_mode():
 # print(f"\nFirst 10 predictions:\n {torch.round(untrained_preds[: 10])}")
 # print(f"\nFirst 10 labels:\n {y_test[: 10]}")
 
-### Optimizer and loss functions
+### 2.2 Optimizer and loss functions
+    
+
 # Setup the loss function
 # loss_fn = nn.BCELoss() # BCELoss = requires inputs to have gone through sigmoid activation function prior to input to BCELoss
 # nn.sequential(
@@ -252,5 +258,3 @@ plt.title("Test")
 plot_decision_boundary(model_0, X_test, y_test)
 # plt.show()
 
-### 5. Improving a model (from a model perspective)
-# Add more layers - give the model more chances to learn about patterns in the data
