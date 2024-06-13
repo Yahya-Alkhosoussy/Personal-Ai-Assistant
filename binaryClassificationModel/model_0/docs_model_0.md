@@ -85,7 +85,7 @@ To train our model, we're going to build a training loop, with the following ste
 4. loss backward (backpropogation)
 5. optimizer step (gradient descent)
 
-## 3.1 Going from raw logits -> prediction probabilities -> prdiction labels
+### 3.1 Going from raw logits -> prediction probabilities -> prdiction labels
 
 Our model outputs are going to be raw **logits.**
 
