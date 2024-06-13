@@ -30,10 +30,10 @@ circles = pd.DataFrame({"X1": X[:, 0],
 # print(circles.head(10))
 
 # plots the points making the 2 circles for visualization
-plt.scatter(x=X[:, 0],
-            y=X[:, 1],
-            c=y,
-            cmap=plt.cm.RdYlBu) #Cmap = plt.colormap.RedYellowBlue
+# plt.scatter(x=X[:, 0],
+#             y=X[:, 1],
+#             c=y,
+#             cmap=plt.cm.RdYlBu) #Cmap = plt.colormap.RedYellowBlue
 
 # X and Y are of type numpy arrays so we need to convert them to torch tensors
 
@@ -142,7 +142,7 @@ else:
     torch.manual_seed(42)
 
 # Set the number of epochs
-epochs = 100
+epochs = 1000
 
 X_train, y_train = X_train.to(device), y_train.to(device)
 X_test, y_test = X_test.to(device), y_test.to(device)
@@ -205,7 +205,7 @@ for epoch in range(epochs):
                           test_pred)
 
     # Print the training and testing metrics every 10 epochs
-    if epoch % 10 == 0:
+    if epoch % 100 == 0:
         print(f"Epoch: {epoch} | Loss: {loss:.5f}, Acc: {acc:.2f}% | Test loss: {test_loss:.5f}, Test acc: {test_acc:.2f}%")
         #.#f where # is an integer is how many decimal points is wanted
 
@@ -250,4 +250,7 @@ plot_decision_boundary(model_0, X_train, y_train)
 plt.subplot(1,2,2)
 plt.title("Test")
 plot_decision_boundary(model_0, X_test, y_test)
-plt.show()
+# plt.show()
+
+### 5. Improving a model (from a model perspective)
+# Add more layers - give the model more chances to learn about patterns in the data
