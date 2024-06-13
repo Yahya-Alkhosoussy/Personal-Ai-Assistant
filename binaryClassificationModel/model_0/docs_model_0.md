@@ -133,5 +133,20 @@ to get the function we needed to import a file from github called `helper_functi
 ## 5. Improving a model (from a model perspective)
 
 A good way to improve the model is by:
+
 * Adding more layers - give the model more chances to learn about patterns in the data
 * Add more hidden unites - go from 5 hidden unites to 10 hidden unites
+* fit for longer
+* Changing the activation function
+* Change the learning rate
+
+These options are all from a model's perspective because they deal directly with the model rather than the data.
+
+due to the fact that all these options are all values we can change they are known as **hyperparameters** (they are what we can change essentially).
+
+Changes done to the hyperparameters:
+* Hidden units: 5 -> 10
+* The number of layers: 2 -> 3
+* Number of epochs: 100 -> 1000
+
+These changes will be done or applied to the model in model_1 rather than model_0 so see you in that directory.

@@ -148,7 +148,7 @@ else:
     torch.manual_seed(42)
 
 # Set the number of epochs
-epochs = 1000
+epochs = 100
 
 X_train, y_train = X_train.to(device), y_train.to(device)
 X_test, y_test = X_test.to(device), y_test.to(device)
@@ -211,7 +211,7 @@ for epoch in range(epochs):
                           test_pred)
 
     # Print the training and testing metrics every 10 epochs
-    if epoch % 100 == 0:
+    if epoch % 10 == 0:
         print(f"Epoch: {epoch} | Loss: {loss:.5f}, Acc: {acc:.2f}% | Test loss: {test_loss:.5f}, Test acc: {test_acc:.2f}%")
         #.#f where # is an integer is how many decimal points is wanted
 
@@ -258,3 +258,4 @@ plt.title("Test")
 plot_decision_boundary(model_0, X_test, y_test)
 # plt.show()
 
+### The improvements and rest of step 5 are in model_1 directory
