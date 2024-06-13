@@ -1,0 +1,3 @@
+Epoch count: 0 
+Loss values: 0.31288138031959534 
+Test Loss Values: 0.48106518387794495 

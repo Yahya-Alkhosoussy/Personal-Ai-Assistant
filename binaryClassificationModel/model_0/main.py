@@ -6,7 +6,7 @@ import torch
 from torch import nn
 import requests
 from pathlib import Path
-
+from helper_functions import *
 
 # Make 1000 samples
 n_samples = 1000
@@ -239,4 +239,15 @@ def download_helpers():
             # Write the content of the response to the file
             f.write(request.content)
 
+# Checking how even the datasets are
+# print(circles.Label.value_counts())
 
+# Plot decision boundary of the model
+plt.figure(figsize=(12,6))
+plt.subplot(1,2,1)
+plt.title("Train")
+plot_decision_boundary(model_0, X_train, y_train)
+plt.subplot(1,2,2)
+plt.title("Test")
+plot_decision_boundary(model_0, X_test, y_test)
+plt.show()

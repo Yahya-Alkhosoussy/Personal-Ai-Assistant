@@ -160,12 +160,11 @@ plt.legend()
 # plot_predictions(predictions=y_pred_new)
 
 # Saves progress to a text file
-with open('progress_and_values.txt', 'w') as a:
+with open('linearModels/trial#1/progress_and_values.txt', 'w') as a:
     for i in range(len(epoch_count)):
         
         a.write(f"Epoch count: {epoch_count[i]} \n")
         a.write(f"Loss values: {loss_values[i]} \n")
         a.write(f"Test Loss Values: {test_loss_values[i]} \n")
-        a.write()
 
 
